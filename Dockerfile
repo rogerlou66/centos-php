@@ -117,6 +117,15 @@ RUN curl http://msmtp.sourceforge.net/doc/msmtprc.txt -o /etc/msmtprc
 RUN curl -sS https://getcomposer.org/installer | php
 
 #
+# Add NVM
+#
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash \
+    && source $NVM_DIR/nvm.sh \
+    && nvm install v7.5 \
+    && nvm use v7.5 \
+    && nvm alias default v7.5
+
+#
 # Copy files into place
 #
 #ADD 
