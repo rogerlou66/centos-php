@@ -111,7 +111,7 @@ RUN echo '<?php phpinfo(); ?>' > /var/www/html/index.php
 #
 RUN curl http://msmtp.sourceforge.net/doc/msmtprc.txt -o /etc/msmtprc
 
-RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - \ 
+RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | bash - \ 
     && yum -y install nodejs gcc-c++ make
 
 #
