@@ -120,6 +120,8 @@ RUN curl -sS https://getcomposer.org/installer | php
 # Add NVM
 #
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash \
+    && export NVM_DIR="$HOME/.nvm" \
+    && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
     && source $NVM_DIR/nvm.sh \
     && nvm install v7.5 \
     && nvm use v7.5 \
