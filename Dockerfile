@@ -22,6 +22,7 @@ RUN yum -y install \
     php-xml \
     php-gd \
     msmtp \
+    bzip2 \
     zip \
     unzip \
     wget \
