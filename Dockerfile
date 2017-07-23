@@ -27,6 +27,7 @@ RUN yum -y install \
     unzip \
     wget \
     vim \
+    git \
     yum-utils \
     && yum -y update bash \
     && rm -rf /var/cache/yum/* \
