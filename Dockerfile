@@ -13,14 +13,6 @@ RUN yum -y install \
     httpd \
     mariadb \
     mod_ssl \
-    php \
-    php-cli \
-    php-ldap \
-    php-mbstring \
-    php-mcrypt \
-    php-mysqlnd \
-    php-xml \
-    php-gd \
     msmtp \
     bzip2 \
     zip \
@@ -29,15 +21,24 @@ RUN yum -y install \
     vim \
     git \
     yum-utils \
-    && yum -y update bash \
-    && rm -rf /var/cache/yum/* \
-    && yum clean all
+    && yum -y update bash 
 
 #
 # Install REMI Repository
 #
 RUN wget http://rpms.remirepo.net/enterprise/remi-release-7.rpm \
-    && rpm -Uvh remi-release-7.rpm
+    && rpm -Uvh remi-release-7.rpm \
+    && yum --enablerepo=remi-php71 -y install \
+    php \
+    php-cli \
+    php-ldap \
+    php-mbstring \
+    php-mcrypt \
+    php-mysqlnd \
+    php-xml \
+    php-gd \
+    && rm -rf /var/cache/yum/* \
+    && yum clean all
 
 #
 # UTC Timezone & Networking
